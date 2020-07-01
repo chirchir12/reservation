@@ -5,10 +5,11 @@ import Home from './Pages/Home';
 import SingleRoom from './Pages/SingleRoom';
 import Rooms from './Pages/Rooms';
 import Error from './Pages/Error';
+import Navbar from './components/Navbar';
 function App() {
   return (
     <>
-      <h1>resort hotel</h1>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms" component={Rooms} />
