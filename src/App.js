@@ -7,12 +7,15 @@ import Rooms from './Pages/Rooms';
 import Error from './Pages/Error';
 function App() {
   return (
-    <div className="Appp">
+    <>
       <h1>resort hotel</h1>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/rooms" component={Rooms} />
-      <Route exact path="/single-room" component={SingleRoom} />
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/rooms" component={Rooms} />
+        <Route exact path="/rooms/:slug" component={SingleRoom} />
+        <Route component={Error} />
+      </Switch>
+    </>
   );
 }
 
