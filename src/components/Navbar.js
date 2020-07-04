@@ -16,7 +16,7 @@ class Navbar extends Component {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={logo} alt="beach resort" srcset="" />
+              <img src={logo} alt="beach resort" />
             </Link>
             <button
               onClick={this.handleToggle}
