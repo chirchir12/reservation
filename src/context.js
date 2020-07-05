@@ -54,7 +54,7 @@ class RoomsProvider extends Component {
   handleChange = (event) => {
     const target = event.target;
     let name = target.name;
-    let value = event.type === 'checkbox' ? target.checked : target.value;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState(
       {
         [name]: value,
@@ -97,8 +97,14 @@ class RoomsProvider extends Component {
     );
 
     //filter by pets
+    if (pets) {
+      tempRooms = tempRooms.filter((item) => item.pets === true);
+    }
 
     // filter by breakfast
+    if (breakfast) {
+      tempRooms = tempRooms.filter((item) => item.breakfast === true);
+    }
 
     this.setState({
       sortedRooms: tempRooms,
