@@ -66,6 +66,20 @@ function RoomFilter({ rooms }) {
             {guests}
           </select>
         </div>
+        {/* price */}
+        <div className="form-group">
+          <label htmlFor="price">room price ${price}</label>
+          <input
+            type="range"
+            min={minPrice}
+            id="price"
+            max={maxPrice}
+            value={price}
+            className="form-control"
+            name="price"
+            onChange={handleChange}
+          />
+        </div>
       </form>
     </section>
   );
