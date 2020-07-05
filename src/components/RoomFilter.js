@@ -19,8 +19,17 @@ function RoomFilter({ rooms }) {
     handleChange,
   } = useContext(RoomsContext);
   let types = getUnique(rooms, 'type');
+  let guests = getUnique(rooms, 'capacity');
   types = ['all', ...types];
+
   types = types.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+  guests = guests.map((item, index) => {
     return (
       <option value={item} key={index}>
         {item}
@@ -44,7 +53,19 @@ function RoomFilter({ rooms }) {
             {types}
           </select>
         </div>
-        {/* select */}
+        {/* select capacity */}
+        <div className="form-group">
+          <label htmlFor="capacity">guest</label>
+          <select
+            name="capacity"
+            id="capacity"
+            value={capacity}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {guests}
+          </select>
+        </div>
       </form>
     </section>
   );

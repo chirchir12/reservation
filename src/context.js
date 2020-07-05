@@ -73,10 +73,19 @@ class RoomsProvider extends Component {
       breakfast,
       pets,
     } = this.state;
+
     let tempRooms = [...rooms];
+    capacity = +capacity;
+    // filter by type
     if (type !== 'all') {
       tempRooms = tempRooms.filter((item) => item.type === type);
     }
+
+    // filter by guests
+    if (capacity !== 1) {
+      tempRooms = tempRooms.filter((item) => item.capacity >= capacity);
+    }
+
     this.setState({
       sortedRooms: tempRooms,
     });
